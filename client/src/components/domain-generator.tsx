@@ -38,9 +38,7 @@ export default function DomainGenerator({
     try {
       onGenerationStart();
       
-      // Use demo endpoint if demo mode is enabled
-      const endpoint = demoMode ? "/api/demo-domains" : "/api/generate-domains";
-      const response = await apiRequest("POST", endpoint, data);
+      const response = await apiRequest("POST", "/api/generate-domains", data);
       const result = await response.json();
       
       if (result.suggestions && Array.isArray(result.suggestions)) {
