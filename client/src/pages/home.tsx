@@ -39,12 +39,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center">
-                <i className="fas fa-crown text-white text-lg"></i>
+              <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center">
+                <i className="fas fa-globe text-white text-lg"></i>
               </div>
               <div>
-                <h1 className="text-xl font-bold text-white">MillionaireDomains</h1>
-                <p className="text-xs text-gray-400">AI-Powered by Millionaire Insights</p>
+                <h1 className="text-xl font-bold text-white">DotComDaddy</h1>
+                <p className="text-xs text-gray-400">AI-Powered Domain Generator</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -63,14 +63,14 @@ export default function Home() {
       {/* Hero Section */}
       <section className="py-16 lg:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center space-x-2 bg-purple-500/10 border border-purple-500/20 rounded-full px-4 py-2 mb-8">
-            <i className="fas fa-sparkles text-purple-400"></i>
-            <span className="text-purple-300 text-sm font-medium">Domain Name Generator Based on Millionaire Strategies</span>
+          <div className="inline-flex items-center space-x-2 bg-orange-500/10 border border-orange-500/20 rounded-full px-4 py-2 mb-8">
+            <i className="fas fa-sparkles text-orange-400"></i>
+            <span className="text-orange-300 text-sm font-medium">Smart Domain Names for Smart Entrepreneurs</span>
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
             Generate Scroll-Stopping
-            <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent"> Domain Names</span>
+            <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent"> Domain Names</span>
           </h1>
           
           <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -81,15 +81,15 @@ export default function Home() {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mb-16">
             <div className="text-center">
-              <div className="text-2xl font-bold text-purple-400">10K+</div>
+              <div className="text-2xl font-bold text-orange-400">10K+</div>
               <div className="text-sm text-gray-400">Domains Generated</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-indigo-400">95%</div>
+              <div className="text-2xl font-bold text-red-400">95%</div>
               <div className="text-sm text-gray-400">Satisfaction Rate</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-green-400">24/7</div>
+              <div className="text-2xl font-bold text-orange-400">24/7</div>
               <div className="text-sm text-gray-400">AI Available</div>
             </div>
           </div>
@@ -121,7 +121,7 @@ export default function Home() {
       <section className="py-24 bg-gradient-to-b from-gray-900 to-dark-950">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Why Choose MillionaireDomains?</h2>
+            <h2 className="text-3xl font-bold mb-4">Why Choose DotComDaddy?</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">Our AI uses proven naming strategies from successful entrepreneurs to create domain names that build brands and drive success.</p>
           </div>
 
@@ -159,11 +159,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center">
-                  <i className="fas fa-crown text-white text-lg"></i>
+                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center">
+                  <i className="fas fa-globe text-white text-lg"></i>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">MillionaireDomains</h3>
+                  <h3 className="text-xl font-bold">DotComDaddy</h3>
                   <p className="text-sm text-gray-400">AI-Powered Domain Generator</p>
                 </div>
               </div>
@@ -205,7 +205,7 @@ export default function Home() {
           </div>
           
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 MillionaireDomains. All rights reserved. Powered by Gemini AI.</p>
+            <p>&copy; 2024 DotComDaddy. All rights reserved. Powered by Gemini AI.</p>
           </div>
         </div>
       </footer>

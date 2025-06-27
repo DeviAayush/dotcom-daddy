@@ -1,8 +1,8 @@
-# MillionaireDomains - AI-Powered Domain Generator
+# DotComDaddy - AI-Powered Domain Generator
 
 ## Overview
 
-MillionaireDomains is a SaaS application that generates creative domain names using AI insights based on naming frameworks used by successful entrepreneurs and millionaires. The application leverages Google's Gemini API to generate brandable, memorable domain names tailored to specific business types, tones, and preferences.
+DotComDaddy is a SaaS application that generates creative domain names using AI insights based on naming frameworks used by successful entrepreneurs and millionaires. The application leverages Google's Gemini API to generate brandable, memorable domain names tailored to specific business types, tones, and preferences.
 
 ## System Architecture
 
@@ -105,24 +105,34 @@ Changelog:
 - June 27, 2025. Added Gemini AI integration with improved prompting
 - June 27, 2025. Implemented demo mode for API quota management
 - June 27, 2025. Enhanced error handling and user experience
+- June 27, 2025. Rebranded to DotComDaddy with new orange/red theme
+- June 27, 2025. Changed tone selection from dropdown to button grid
+- June 27, 2025. Updated all branding and visual elements
 ```
 
 ## Recent Features
+
+### DotComDaddy Rebrand
+- Complete rebrand from MillionaireDomains to DotComDaddy
+- New orange/red gradient color scheme throughout the application
+- Updated logo from crown to globe icon
+- Fresh tagline: "Smart Domain Names for Smart Entrepreneurs"
+
+### Enhanced UI Components
+- Tone selection changed from dropdown to interactive button grid
+- 8 tone options with icons: Professional, Modern, Bold, Classy, Quirky, Funny, Trendy, Minimalist
+- Responsive grid layout for better mobile experience
+- Orange/red theme applied to all interactive elements
 
 ### Dark Theme Implementation
 - Complete dark UI with custom color palette
 - Gradient backgrounds and glass morphism effects
 - Professional dark styling across all components
 
-### AI Integration Enhancements
+### AI Integration
 - Updated Gemini prompt using Greg Isenberg naming frameworks
 - Improved response formatting and validation
 - Better error handling for API quota limits
-
-### Demo Mode Feature
-- Toggle switch for demo mode when API limits reached
-- Sample domain suggestions for user testing
-- Seamless fallback functionality
 
 ### User Experience Improvements
 - Smooth scrolling to results
