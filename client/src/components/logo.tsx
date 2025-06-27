@@ -12,26 +12,31 @@ export default function DotComDaddyLogo({ className = "w-10 h-10" }: LogoProps) 
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* Globe base */}
-      <circle cx="20" cy="20" r="16" fill="#1A1A1A" stroke="#FF6B35" strokeWidth="2"/>
+      {/* Main circular background */}
+      <circle cx="20" cy="20" r="18" fill="#0F0F23" stroke="#A259FF" strokeWidth="2"/>
+      
+      {/* Globe/Domain icon */}
+      <circle cx="20" cy="20" r="12" fill="none" stroke="#A259FF" strokeWidth="1.5" opacity="0.8"/>
       
       {/* Globe grid lines */}
-      <path d="M4 20 C4 20, 10 15, 20 15 C30 15, 36 20, 36 20" stroke="#FF6B35" strokeWidth="1.5" fill="none" opacity="0.7"/>
-      <path d="M4 20 C4 20, 10 25, 20 25 C30 25, 36 20, 36 20" stroke="#FF6B35" strokeWidth="1.5" fill="none" opacity="0.7"/>
-      <path d="M20 4 C20 4, 15 10, 15 20 C15 30, 20 36, 20 36" stroke="#FF6B35" strokeWidth="1.5" fill="none" opacity="0.7"/>
-      <path d="M20 4 C20 4, 25 10, 25 20 C25 30, 20 36, 20 36" stroke="#FF6B35" strokeWidth="1.5" fill="none" opacity="0.7"/>
+      <path d="M8 20 C8 20, 14 16, 20 16 C26 16, 32 20, 32 20" stroke="#A259FF" strokeWidth="1" opacity="0.6"/>
+      <path d="M8 20 C8 20, 14 24, 20 24 C26 24, 32 20, 32 20" stroke="#A259FF" strokeWidth="1" opacity="0.6"/>
+      <path d="M20 8 C20 8, 16 14, 16 20 C16 26, 20 32, 20 32" stroke="#A259FF" strokeWidth="1" opacity="0.6"/>
+      <path d="M20 8 C20 8, 24 14, 24 20 C24 26, 20 32, 20 32" stroke="#A259FF" strokeWidth="1" opacity="0.6"/>
       
-      {/* Rising arrow/growth element */}
-      <path d="M12 24 L16 20 L20 22 L24 18 L28 20" stroke="#9333EA" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+      {/* Rocket/Growth element */}
+      <path d="M14 26 L17 23 L20 24 L23 21 L26 22" stroke="#FF8C42" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M23 22 L26 19 L26 22 L23 22" fill="#FF8C42"/>
       
-      {/* Arrow tip */}
-      <path d="M25 20 L28 17 L28 20 L25 20" fill="#9333EA"/>
+      {/* Crown element (more modern) */}
+      <path d="M16 14 L18 12 L20 14 L22 12 L24 14 L23 17 L17 17 Z" fill="#A259FF"/>
+      <circle cx="20" cy="11" r="1.5" fill="#FF8C42"/>
       
-      {/* Crown/daddy element (simplified) */}
-      <path d="M16 12 L18 10 L20 12 L22 10 L24 12 L23 16 L17 16 Z" fill="#FF6B35"/>
-      
-      {/* Dot accent */}
-      <circle cx="20" cy="8" r="2" fill="#9333EA"/>
+      {/* Domain dots */}
+      <circle cx="13" cy="13" r="1" fill="#A259FF" opacity="0.7"/>
+      <circle cx="27" cy="13" r="1" fill="#A259FF" opacity="0.7"/>
+      <circle cx="13" cy="27" r="1" fill="#A259FF" opacity="0.7"/>
+      <circle cx="27" cy="27" r="1" fill="#A259FF" opacity="0.7"/>
     </svg>
   );
 }

@@ -30,7 +30,7 @@ export const insertDomainGenerationSchema = createInsertSchema(domainGenerations
 export const domainGenerationRequestSchema = z.object({
   businessType: z.string().min(1, "Business type is required"),
   keywords: z.string().optional(),
-  tone: z.enum([
+  tone: z.array(z.enum([
     "professional",
     "modern", 
     "bold",
@@ -39,7 +39,7 @@ export const domainGenerationRequestSchema = z.object({
     "funny",
     "trendy",
     "minimalist"
-  ]),
+  ])).min(1, "Please select at least one tone"),
   extension: z.string().default(".com"),
 });
 

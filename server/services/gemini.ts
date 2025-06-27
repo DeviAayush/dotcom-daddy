@@ -14,7 +14,7 @@ Your task is to generate 10 high-quality, relevant, and creative business or dom
 Inputs:
 - Business Type: ${request.businessType}
 - Keywords: ${request.keywords || 'None provided'}
-- Tone/Style Preference: ${request.tone} (e.g., classy, funny, quirky, bold, premium, modern)
+- Tone/Style Preference: ${request.tone.join(', ')} (blend these tones naturally)
 - Domain Extension: ${request.extension} (e.g., .com, .ai, .app)
 
 Instructions:

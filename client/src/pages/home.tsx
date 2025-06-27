@@ -62,14 +62,14 @@ export default function Home() {
       {/* Hero Section */}
       <section className="py-16 lg:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center space-x-2 bg-orange-500/10 border border-orange-500/20 rounded-full px-4 py-2 mb-8">
-            <i className="fas fa-sparkles text-orange-400"></i>
-            <span className="text-orange-300 text-sm font-medium">Smart Domain Names for Smart Entrepreneurs</span>
+          <div className="inline-flex items-center space-x-2 bg-purple-500/10 border border-purple-500/20 rounded-full px-4 py-2 mb-8">
+            <i className="fas fa-sparkles text-purple-400"></i>
+            <span className="text-purple-300 text-sm font-medium">Smart Domain Names for Smart Entrepreneurs</span>
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
             Generate Scroll-Stopping
-            <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent"> Domain Names</span>
+            <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent"> Domain Names</span>
           </h1>
           
           <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -80,15 +80,15 @@ export default function Home() {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mb-16">
             <div className="text-center">
-              <div className="text-2xl font-bold text-orange-400">10K+</div>
+              <div className="text-2xl font-bold text-purple-400">10K+</div>
               <div className="text-sm text-gray-400">Domains Generated</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-red-400">95%</div>
+              <div className="text-2xl font-bold text-indigo-400">95%</div>
               <div className="text-sm text-gray-400">Satisfaction Rate</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-orange-400">24/7</div>
+              <div className="text-2xl font-bold text-purple-400">24/7</div>
               <div className="text-sm text-gray-400">AI Available</div>
             </div>
           </div>

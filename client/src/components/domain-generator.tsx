@@ -29,7 +29,7 @@ export default function DomainGenerator({
     defaultValues: {
       businessType: "",
       keywords: "",
-      tone: "professional",
+      tone: [],
       extension: ".com",
     },
   });
@@ -82,7 +82,7 @@ export default function DomainGenerator({
               <Input
                 id="businessType"
                 placeholder="e.g., E-commerce platform, Food delivery app, Fitness coaching..."
-                className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white placeholder-gray-400 transition-all"
+                className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400 transition-all"
                 {...form.register("businessType")}
               />
               {form.formState.errors.businessType && (
@@ -98,7 +98,7 @@ export default function DomainGenerator({
               <Input
                 id="keywords"
                 placeholder="e.g., fast, smart, easy, pro, hub..."
-                className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white placeholder-gray-400 transition-all"
+                className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400 transition-all"
                 {...form.register("keywords")}
               />
             </div>
@@ -106,7 +106,7 @@ export default function DomainGenerator({
             {/* Tone/Style Preference */}
             <div className="space-y-3">
               <Label className="text-sm font-medium text-gray-200">
-                Tone/Style Preference <span className="text-red-400">*</span>
+                Tone/Style Preference <span className="text-red-400">*</span> <span className="text-gray-500 text-xs">(Click multiple)</span>
               </Label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {[
@@ -118,22 +118,34 @@ export default function DomainGenerator({
                   { value: "funny", label: "Funny", icon: "fas fa-laugh" },
                   { value: "trendy", label: "Trendy", icon: "fas fa-chart-line" },
                   { value: "minimalist", label: "Minimalist", icon: "fas fa-circle" }
-                ].map((tone) => (
-                  <Button
-                    key={tone.value}
-                    type="button"
-                    variant={form.watch("tone") === tone.value ? "default" : "outline"}
-                    onClick={() => form.setValue("tone", tone.value as any)}
-                    className={`flex flex-col items-center space-y-2 p-4 h-auto transition-all ${
-                      form.watch("tone") === tone.value
-                        ? "bg-gradient-to-r from-orange-500 to-red-600 text-white border-orange-500"
-                        : "bg-gray-800/50 text-gray-300 border-gray-700 hover:bg-gray-700/50 hover:border-orange-500/50"
-                    }`}
-                  >
-                    <i className={`${tone.icon} text-lg`}></i>
-                    <span className="text-xs font-medium">{tone.label}</span>
-                  </Button>
-                ))}
+                ].map((tone) => {
+                  const toneValue = tone.value as "professional" | "modern" | "bold" | "classy" | "quirky" | "funny" | "trendy" | "minimalist";
+                  const isSelected = form.watch("tone").includes(toneValue);
+                  
+                  return (
+                    <Button
+                      key={tone.value}
+                      type="button"
+                      variant={isSelected ? "default" : "outline"}
+                      onClick={() => {
+                        const currentTones = form.watch("tone");
+                        if (isSelected) {
+                          form.setValue("tone", currentTones.filter(t => t !== toneValue));
+                        } else {
+                          form.setValue("tone", [...currentTones, toneValue]);
+                        }
+                      }}
+                      className={`flex flex-col items-center space-y-2 p-4 h-auto transition-all ${
+                        isSelected
+                          ? "bg-gradient-to-r from-purple-500 to-indigo-600 text-white border-purple-500"
+                          : "bg-gray-800/50 text-gray-300 border-gray-700 hover:bg-gray-700/50 hover:border-purple-500/50"
+                      }`}
+                    >
+                      <i className={`${tone.icon} text-lg`}></i>
+                      <span className="text-xs font-medium">{tone.label}</span>
+                    </Button>
+                  );
+                })}
               </div>
               {form.formState.errors.tone && (
                 <p className="text-red-400 text-sm">{form.formState.errors.tone.message}</p>
@@ -149,7 +161,7 @@ export default function DomainGenerator({
                 value={form.watch("extension")} 
                 onValueChange={(value) => form.setValue("extension", value)}
               >
-                <SelectTrigger className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white transition-all">
+                <SelectTrigger className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white transition-all">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-gray-800 border-gray-700">
@@ -170,7 +182,7 @@ export default function DomainGenerator({
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-[1.02] focus:ring-4 focus:ring-orange-500/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-[1.02] focus:ring-4 focus:ring-purple-500/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
                 <span className="flex items-center justify-center space-x-2">
                   {isLoading ? (
