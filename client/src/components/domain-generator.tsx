@@ -73,22 +73,6 @@ export default function DomainGenerator({
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">Generate Your Perfect Domain</h2>
             <p className="text-gray-400">Fill in the details below and let our AI create brandable domain names using millionaire naming strategies.</p>
-            
-            {/* Demo Mode Toggle */}
-            <div className="flex items-center justify-center space-x-3 mt-6 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
-              <i className="fas fa-exclamation-triangle text-yellow-400"></i>
-              <span className="text-yellow-200 text-sm">API quota temporarily exceeded</span>
-              <div className="flex items-center space-x-2 ml-4">
-                <Label htmlFor="demo-mode" className="text-sm text-yellow-200">
-                  Try Demo Mode
-                </Label>
-                <Switch
-                  id="demo-mode"
-                  checked={demoMode}
-                  onCheckedChange={setDemoMode}
-                />
-              </div>
-            </div>
           </div>
 
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
