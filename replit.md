@@ -101,8 +101,34 @@ MillionaireDomains is a SaaS application that generates creative domain names us
 
 ```
 Changelog:
-- June 27, 2025. Initial setup
+- June 27, 2025. Initial setup with dark theme UI
+- June 27, 2025. Added Gemini AI integration with improved prompting
+- June 27, 2025. Implemented demo mode for API quota management
+- June 27, 2025. Enhanced error handling and user experience
 ```
+
+## Recent Features
+
+### Dark Theme Implementation
+- Complete dark UI with custom color palette
+- Gradient backgrounds and glass morphism effects
+- Professional dark styling across all components
+
+### AI Integration Enhancements
+- Updated Gemini prompt using Greg Isenberg naming frameworks
+- Improved response formatting and validation
+- Better error handling for API quota limits
+
+### Demo Mode Feature
+- Toggle switch for demo mode when API limits reached
+- Sample domain suggestions for user testing
+- Seamless fallback functionality
+
+### User Experience Improvements
+- Smooth scrolling to results
+- Copy-to-clipboard functionality
+- Interactive domain cards with availability indicators
+- Professional loading states and animations
 
 ## User Preferences
 

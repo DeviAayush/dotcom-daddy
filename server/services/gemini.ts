@@ -7,38 +7,35 @@ const ai = new GoogleGenAI({
 
 export async function generateDomainNames(request: DomainGenerationRequest): Promise<DomainSuggestion[]> {
   try {
-    const prompt = `You are a startup naming expert trained on frameworks used by successful entrepreneurs and millionaires.
+    const prompt = `You are a professional startup naming expert trained on successful frameworks used by entrepreneurs and millionaires.
 
-Based on the following user input, suggest 10 creative, brandable, and scroll-stopping domain name ideas for their new business.
+Your task is to generate 10 high-quality, relevant, and creative business or domain name suggestions based on the following user input:
 
-Details:
+Inputs:
 - Business Type: ${request.businessType}
-- Keywords (optional): ${request.keywords || 'None provided'}
-- Tone/Style Preference: ${request.tone} (e.g., funny, classy, quirky, modern, bold, professional)
-- Preferred Domain Extension: ${request.extension} (e.g., .com, .ai, .store)
+- Keywords: ${request.keywords || 'None provided'}
+- Tone/Style Preference: ${request.tone} (e.g., classy, funny, quirky, bold, premium, modern)
+- Domain Extension: ${request.extension} (e.g., .com, .ai, .app)
 
-Guidelines:
-- Use naming techniques inspired by Greg Isenberg's framework:
-    - Descriptive names (clearly explain the business's value or appeal)
-    - Culturally-relevant phrases (that resonate with trends or specific communities)
-    - Humorous or playful ideas (that are memorable and viral-worthy)
-- Avoid generic, forgettable, or "tofu" names (bland or hard to remember).
-- Follow the "telephone test" – names should be easy to say, spell, and search.
-- Use clever wordplay or subtle alliteration where it enhances memorability.
-- At least 2 names should come with a short explanation of why they work well.
-- Optionally, suggest whether a domain or social handle may be available.
-
-Your goal is to create names that could help this product go viral and build a strong internet-first brand.
-
-Generate at least 10 high-quality names per request.
+Instructions:
+- Use the provided keywords meaningfully in the names. They must reflect the core idea or vibe.
+- Follow Greg Isenberg-style naming techniques:
+    - Descriptive names (that clearly show what the product is)
+    - Cultural/phrase-based names (connected to internet trends or relatable ideas)
+    - Funny or memorable names (that stick in users' heads)
+- Avoid bland or generic "tofu" names.
+- Ensure the names are easy to say, spell, and search (pass the Telephone Test).
+- Use smart wordplay, alliteration, or emotional resonance where it adds value.
 
 Return the response as a JSON array where each item has:
-- name: the domain name
-- type: the category (e.g., "Descriptive", "Cultural Phrase", "Humorous", "Wordplay")
-- rationale: explanation of why this name works well
+- name: the domain name (include the extension)
+- type: the category (e.g., "Descriptive", "Phrase", "Funny", "Trendy", "Invented")
+- rationale: Brief explanation of why the name fits well
 - availability: "available", "check", or "taken" (your best guess)
 - telephoneTest: true/false if it passes the telephone test
-- viralPotential: "Low", "Medium", "High", or "Very High"`;
+- viralPotential: "Low", "Medium", "High", or "Very High"
+
+Your response should strictly relate to the input tone, keywords, and business context. Generate exactly 10 names in this format.`;
 
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
