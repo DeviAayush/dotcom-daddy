@@ -41,11 +41,11 @@ Return the response as a JSON array where each item has:
 - viralPotential: "Low", "Medium", "High", or "Very High"`;
 
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-pro",
+      model: "gemini-2.5-flash",
       config: {
         responseMimeType: "application/json",
         responseSchema: {
-          type: "array",
+          type: "array",  
           items: {
             type: "object",
             properties: {
@@ -73,6 +73,12 @@ Return the response as a JSON array where each item has:
 
   } catch (error) {
     console.error("Gemini API Error:", error);
+    
+    // If it's a quota error, provide helpful error message
+    if (error && typeof error === 'object' && 'status' in error && error.status === 429) {
+      throw new Error("API quota exceeded. Please try again later or upgrade your Gemini API plan for higher quotas.");
+    }
+    
     throw new Error(`Failed to generate domain names: ${error}`);
   }
 }
