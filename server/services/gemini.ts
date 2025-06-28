@@ -1,9 +1,18 @@
 import { GoogleGenAI } from "@google/genai";
 import type { DomainGenerationRequest, DomainSuggestion } from "@shared/schema";
+import dotenv from "dotenv";
+dotenv.config();
 
 const ai = new GoogleGenAI({ 
   apiKey: process.env.GEMINI_API_KEY || process.env.API_KEY || "" 
 });
+
+if (!process.env.GEMINI_API_KEY) {
+  console.error("Gemini API Key not found!");
+  throw new Error("Gemini API Key not found. Please set it in .env file or env variables.");
+} else {
+  console.log("Gemini API Key loaded: AIzaS...");
+}
 
 export async function generateDomainNames(request: DomainGenerationRequest): Promise<DomainSuggestion[]> {
   try {

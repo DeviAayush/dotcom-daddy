@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import DomainGenerator from "@/components/domain-generator";
 import DomainResults from "@/components/domain-results";
 import DotComDaddyLogo from "@/components/logo";
@@ -8,6 +8,14 @@ export default function Home() {
   const [results, setResults] = useState<DomainSuggestion[] | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const domainGeneratorRef = useRef<HTMLDivElement>(null);
+
+  const scrollToDomainGenerator = () => {
+    domainGeneratorRef.current?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
 
   const handleGenerationStart = () => {
     setIsLoading(true);
@@ -51,7 +59,10 @@ export default function Home() {
                 <i className="fas fa-robot text-purple-400"></i>
                 <span>Powered by Gemini AI</span>
               </div>
-              <button className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+              <button 
+                onClick={scrollToDomainGenerator}
+                className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+              >
                 Get Started
               </button>
             </div>
@@ -96,12 +107,14 @@ export default function Home() {
       </section>
 
       {/* Domain Generator Form */}
-      <DomainGenerator
-        onGenerationStart={handleGenerationStart}
-        onGenerationSuccess={handleGenerationSuccess}
-        onGenerationError={handleGenerationError}
-        isLoading={isLoading}
-      />
+      <div ref={domainGeneratorRef}>
+        <DomainGenerator
+          onGenerationStart={handleGenerationStart}
+          onGenerationSuccess={handleGenerationSuccess}
+          onGenerationError={handleGenerationError}
+          isLoading={isLoading}
+        />
+      </div>
 
       {/* Results Section */}
       <DomainResults
@@ -203,6 +216,7 @@ export default function Home() {
           
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
             <p>&copy; 2024 DotComDaddy. All rights reserved. Powered by Gemini AI.</p>
+            <p className="mt-2 text-sm">Created by Aayush Gupta</p>
           </div>
         </div>
       </footer>
